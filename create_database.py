@@ -8,8 +8,7 @@ sql = """
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
            id integer unique primary key autoincrement,
-           name text,
-           spirit_animal text
+           name text
 );
 """
 c.executescript(sql)

@@ -1,8 +1,11 @@
 import cv2
 import numpy as np 
 import sqlite3
+import os
 
 conn = sqlite3.connect('database.db')
+if not os.path.exists('./dataset'):
+    os.makedirs('./dataset')
 
 c = conn.cursor()
 
@@ -11,9 +14,8 @@ face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 cap = cv2.VideoCapture(0)
 
 uname = input("Enter your name: ")
-spirit_animal = input("Enter your spirit animal: ")
 
-c.execute('INSERT INTO users (name,spirit_animal) VALUES (?,?)', (uname,spirit_animal))
+c.execute('INSERT INTO users (name) VALUES (?)', (uname,))
 
 uid = c.lastrowid
 
@@ -30,7 +32,7 @@ while True:
 		cv2.waitKey(100)
 	cv2.imshow('img',img)
 	cv2.waitKey(1);
-	if sampleNum > 30:
+	if sampleNum > 20:
 		break
 cap.release()
 

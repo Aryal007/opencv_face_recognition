@@ -3,8 +3,10 @@ import cv2
 import numpy as np 
 from PIL import Image
 
-recognizer = cv2.face.createLBPHFaceRecognizer()
+recognizer = cv2.face.LBPHFaceRecognizer_create()
 path = 'dataset'
+if not os.path.exists('./recognizer'):
+    os.makedirs('./recognizer')
 
 def getImagesWithID(path):
 	imagePaths = [os.path.join(path,f) for f in os.listdir(path)]

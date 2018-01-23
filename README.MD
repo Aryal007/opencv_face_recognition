@@ -1,22 +1,14 @@
-This repository is for implementing face detection using OpenCV 3.2.0 with opencv-contrib modules
+# Face recognition on OpenCV 3.4.0 
 
-Make sure you have OpenCV 3.2.0 with opencv-contrib modules installed before running the files
+The full tutorial can befound on the link: http://www.python36.com/face-recognition-using-opencv-part-1/
 
-## Requirements
-
-1> OpenCV 3.2.0
-
-2> sqlite3
-
-3> numpy
-
-4> Pillow
+## Requirements can be found in the file requirements.txt
 
 ## Files
 
 1> create_database.py (used to create sqlite database)
 
-2> record_face.py (Records the Name and spirit animal associated with the face)
+2> record_face.py (Records the Name associated with the face)
 
 3> trainer.py (used to train LBPHFaceRecognizer for face recognition)
 
